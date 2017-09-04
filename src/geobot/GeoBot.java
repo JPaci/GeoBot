@@ -5,18 +5,33 @@
  */
 package geobot;
 
-/**
- *
- * @author Joseph
- */
+
 public class GeoBot {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello, world!");
-        System.out.println("Will this show up to me in netbeans?");
+        /**
+         * @Will I guess if you want to start making input parsing you could.
+         * 
+         * I just have some code here to test how points are working.
+         * 
+         */
+        
+        
+        GeoObject Zed = new GeoObject("Pinochet 3000", "Helicpoter");
+        System.out.println(Zed.getName());
+        
+        Point A = new Point("A");
+        System.out.println(A.getName());
+        
+        Point B = new Point("B");
+        System.out.println(B.getName());
+        
+        Line AB = new Line(A, B);
+        System.out.println(AB.getName());
+        
     }
     
 }
