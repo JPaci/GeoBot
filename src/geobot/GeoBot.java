@@ -16,7 +16,7 @@ public class GeoBot {
      */
     public static void main(String[] args) {
         System.out.println("Hello, world!");
-        System.out.println("Will this show up to me in netbeans?")
+        System.out.println("Will this show up to me in netbeans?");
     }
     
 }
