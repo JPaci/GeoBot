@@ -21,7 +21,7 @@ public class GeoObject {
         return(type + " " + name.toUpperCase());
     }
     
-    public String getSymbol(){
+    public String toString(){
         return(name);
     }
     

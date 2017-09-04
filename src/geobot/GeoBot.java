@@ -6,6 +6,7 @@
 package geobot;
 
 
+
 public class GeoBot {
 
     /**
@@ -15,7 +16,7 @@ public class GeoBot {
         /**
          * @Will I guess if you want to start making input parsing you could.
          * 
-         * I just have some code here to test how points are working.
+         * I just have some code here to test how points and lines are working.
          * 
          */
         
@@ -29,8 +30,16 @@ public class GeoBot {
         Point B = new Point("B");
         System.out.println(B.getName());
         
+        Point C = new Point("C");
+        
         Line AB = new Line(A, B);
         System.out.println(AB.getName());
+        
+        AB.addCollinearPoint(C);
+        for(Point i : AB.getCollinearPoints()){
+            System.out.println(i);
+        }
+        
         
     }
     
