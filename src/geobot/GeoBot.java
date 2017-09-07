@@ -19,8 +19,7 @@ public class GeoBot {
          * I just have some code here to test how points and lines are working.
          * 
          */
-        
-        
+         
         GeoObject Zed = new GeoObject("Pinochet 3000", "Helicpoter");
         System.out.println(Zed.getName());
         
@@ -38,8 +37,26 @@ public class GeoBot {
         AB.addCollinearPoint(C);
         for(Point i : AB.getCollinearPoints()){
             System.out.println(i);
+        
+        /*
+        * @Paci I'll start by copy-pasting in my processing code so you can see it
+        * It's WIP so the only part that's complete is the cutting up of the string
+        */
+        System.out.println("Input an operation");
+        Scanner input = new Scanner(System.in);
+        String in = input.nextLine();
+        in.replaceAll("\\s", " ");
+        int procLength = in.length();
+        String[] procArray = new String[procLength];
+        procArray = in.split(" ");
+        in.replaceAll("\\s", "");
+        int mainLength = in.length();
+        String[] mainArray = new String [mainLength];
+        for(int i = 0; i < mainLength; i++){
+           mainArray[i] = procArray[i];
         }
         
+        }
         
     }
     
