@@ -5,7 +5,7 @@
  */
 package geobot;
 
-
+import java.util.Scanner;
 
 public class GeoBot {
 
@@ -52,8 +52,8 @@ public class GeoBot {
         in.replaceAll("\\s", "");
         int mainLength = in.length();
         String[] mainArray = new String [mainLength];
-        for(int i = 0; i < mainLength; i++){
-           mainArray[i] = procArray[i];
+        for(int j = 0; j < mainLength; j++){
+           mainArray[j] = procArray[j];
         }
         
         }
