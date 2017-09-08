@@ -34,9 +34,9 @@ public class GeoBot {
         Line AB = new Line(A, B);
         System.out.println(AB.getName());
         
-        AB.addCollinearPoint(C);
-        for(Point i : AB.getCollinearPoints()){
-            System.out.println(i);
+        PointOnLine Pol = new PointOnLine(C, AB);
+        Pol.process();
+        System.out.println(AB.getCollinearPoints()[0]);
         
         /*
         * @Paci I'll start by copy-pasting in my processing code so you can see it
@@ -51,7 +51,7 @@ public class GeoBot {
         procArray = in.split(" ");
         in.replaceAll("\\s", "");
         int mainLength = in.length();
-        String[] mainArray = new String [mainLength];
+        String[] mainArray = new String[mainLength];
         for(int j = 0; j < mainLength; j++){
            mainArray[j] = procArray[j];
         }
@@ -60,4 +60,4 @@ public class GeoBot {
         
     }
     
-}
+
