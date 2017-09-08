@@ -13,13 +13,10 @@ public class GeoBot {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /**
-         * @Will I guess if you want to start making input parsing you could.
-         * 
-         * I just have some code here to test how points and lines are working.
-         * 
-         */
-         
+        
+        GeoStatement Given = new GeoStatement("Given", null);
+        GeoStatement[] givenarray = {Given};
+        
         GeoObject Zed = new GeoObject("Pinochet 3000", "Helicpoter");
         System.out.println(Zed.getName());
         
@@ -34,9 +31,11 @@ public class GeoBot {
         Line AB = new Line(A, B);
         System.out.println(AB.getName());
         
-        PointOnLine Pol = new PointOnLine(C, AB);
+        PointOnLine Pol = new PointOnLine(C, AB, givenarray);
         Pol.process();
+        System.out.println(Pol.premises[0]);
         System.out.println(AB.getCollinearPoints()[0]);
+        System.out.println(Pol);
         
         /*
         * @Paci I'll start by copy-pasting in my processing code so you can see it

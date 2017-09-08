@@ -1,6 +1,5 @@
 package geobot;
 
-import java.util.HashSet;
 
 
 /*
@@ -17,8 +16,8 @@ public class PointOnLine extends GeoStatement {
     public Point point;
     public Line line;
     
-    public PointOnLine(Point p, Line l){
-        super("Point on line");
+    public PointOnLine(Point p, Line l, GeoStatement[] causes){
+        super("Point on line", causes);
         point= p;
         line = l;
       
@@ -31,6 +30,9 @@ public class PointOnLine extends GeoStatement {
             }
         }
         line.addCollinearPoint(point);
+    }
+    public String toString(){
+        return(point + " is on " + line + ". Reason: " + premises[0]);
     }
     
 }

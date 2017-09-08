@@ -14,13 +14,19 @@ import java.util.HashSet;
  */
 public class GeoStatement {
     public String type;
+    public GeoStatement[] premises;
     
-    public GeoStatement(String given_type){
+    public GeoStatement(String given_type, GeoStatement[] premise){
         type = given_type;
+        premises = premise;
     }
     
     public void process(){
         
+    }
+    
+    public String toString(){
+        return(type);
     }
     
     
