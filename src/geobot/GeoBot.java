@@ -5,37 +5,34 @@
  */
 package geobot;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class GeoBot {
+    
+    public ArrayList<GeoObject> objects = new ArrayList<GeoObject>();
+    public HashSet<GeoStatement> statements = new HashSet<GeoStatement>();
+    
+    public void addStatement(GeoStatement s){
+        statements.add(s);
+    }
+    
+    public void applyProperties(){
+        for(GeoStatement s : statements){
+            s.process(this);
+        }
+    }
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         
-        GeoStatement Given = new GeoStatement("Given", null);
-        GeoStatement[] givenarray = {Given};
-        
-        GeoObject Zed = new GeoObject("Pinochet 3000", "Helicpoter");
-        System.out.println(Zed.getName());
-        
         Point A = new Point("A");
-        System.out.println(A.getName());
-        
         Point B = new Point("B");
-        System.out.println(B.getName());
-        
         Point C = new Point("C");
         
-        Line AB = new Line(A, B);
-        System.out.println(AB.getName());
+        Line AC = new Line(A, C);
         
-        PointOnLine Pol = new PointOnLine(C, AB, givenarray);
-        Pol.process();
-        System.out.println(Pol.premises[0]);
-        System.out.println(AB.getCollinearPoints()[0]);
-        System.out.println(Pol);
         
         /*
         * @Paci I'll start by copy-pasting in my processing code so you can see it

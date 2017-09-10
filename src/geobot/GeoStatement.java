@@ -21,7 +21,7 @@ public class GeoStatement {
         premises = premise;
     }
     
-    public void process(){
+    public void process(GeoBot problem){
         
     }
     

@@ -23,7 +23,7 @@ public class PointOnLine extends GeoStatement {
       
     }
     
-    public void process(){
+    public void process(GeoBot problem){
         for(Point p : line.getCollinearPoints()){
             if(p.equals(point)){
                 return;
