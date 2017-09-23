@@ -8,14 +8,20 @@ package geobot;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
-
+        
 public class GeoBot {
     
-    public ArrayList<GeoObject> objects = new ArrayList<GeoObject>();
-    public HashSet<GeoStatement> statements = new HashSet<GeoStatement>();
+    
+    
+    public ArrayList<GeoObject> objects = new ArrayList<>();
+    public HashSet<GeoStatement> statements = new HashSet<>();
     
     public void addStatement(GeoStatement s){
         statements.add(s);
+    }
+    
+    public void addObject(GeoObject o){
+        objects.add(o);
     }
     
     public void applyProperties(){
@@ -27,18 +33,25 @@ public class GeoBot {
     
     public static void main(String[] args) {
         
+
+        GeoStatement Given = new GeoStatement("Given", null);
+        GeoStatement[] givenarray = new GeoStatement[]{Given};
+
+        
         Point A = new Point("A");
         Point B = new Point("B");
         Point C = new Point("C");
         
         Line AC = new Line(A, C);
         
+        Midpoint mid = new Midpoint(B, AC, givenarray);
+        
         
         /*
         * @Paci I'll start by copy-pasting in my processing code so you can see it
         * It's WIP so the only part that's complete is the cutting up of the string
         */
-        System.out.println("Input an operation");
+        System.out.println("Input an operatixon");
         Scanner input = new Scanner(System.in);
         String in = input.nextLine();
         in.replaceAll("\\s", " ");
@@ -50,6 +63,7 @@ public class GeoBot {
         String[] mainArray = new String[mainLength];
         for(int j = 0; j < mainLength; j++){
            mainArray[j] = procArray[j];
+           
         }
         
         }
@@ -57,3 +71,4 @@ public class GeoBot {
     }
     
 
+    

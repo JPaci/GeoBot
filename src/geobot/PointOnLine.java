@@ -24,6 +24,11 @@ public class PointOnLine extends GeoStatement {
     }
     
     public void process(GeoBot problem){
+        Point[] line_points = line.getCollinearPoints();
+        Line line_one = new Line(line_points[0], point);
+        Line line_two = new Line(point, line_points[1]);
+        problem.addObject(line_one);
+        problem.addObject(line_two);
         for(Point p : line.getCollinearPoints()){
             if(p.equals(point)){
                 return;

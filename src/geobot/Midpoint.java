@@ -12,6 +12,7 @@ package geobot;
 public class Midpoint extends GeoStatement{
     public Point point;
     public Line line;
+    public GeoStatement thisarr[] = {this};
     
     public Midpoint(Point p, Line l, GeoStatement[] causes){
         super("Midpoint", causes);
@@ -25,9 +26,15 @@ public class Midpoint extends GeoStatement{
     }
     
     public void process(GeoBot problem){
-        GeoStatement thisarr[] = {this};
+        Point[] line_points = line.getCollinearPoints();
+        Line line_one = new Line(line_points[0], point);
+        Line line_two = new Line(point, line_points[1]);
+        problem.addObject(line_one);
+        problem.addObject(line_two);
         PointOnLine pol = new PointOnLine(point, line, thisarr);
+        Equality equ = new Equality(line_one, line_two, thisarr);
         problem.addStatement(pol); // A mid BC implies A on BC
+        problem.addStatement(equ); // A mid BC implies BA = AC
         
     }
     
