@@ -5,6 +5,8 @@
  */
 package geobot;
 
+import java.util.HashSet;
+
 /**
  *
  * @author Joseph

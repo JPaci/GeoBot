@@ -14,37 +14,22 @@ public class GeoBot {
     
     
     public ArrayList<GeoObject> objects = new ArrayList<>();
-    public HashSet<GeoStatement> statements = new HashSet<>();
     
-    public void addStatement(GeoStatement s){
-        statements.add(s);
-    }
+    
     
     public void addObject(GeoObject o){
         objects.add(o);
     }
     
     public void applyProperties(){
-        for(GeoStatement s : statements){
-            s.process(this);
-        }
+        
     }
 
     
     public static void main(String[] args) {
         
 
-        GeoStatement Given = new GeoStatement("Given", null);
-        GeoStatement[] givenarray = new GeoStatement[]{Given};
-
         
-        Point A = new Point("A");
-        Point B = new Point("B");
-        Point C = new Point("C");
-        
-        Line AC = new Line(A, C);
-        
-        Midpoint mid = new Midpoint(B, AC, givenarray);
         
         
         /*
