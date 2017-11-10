@@ -12,7 +12,8 @@ package geobot;
 public class GeoObject {
     public String type;
     public String name;
-    
+    ArrayList<GeoObject> equalities = new ArrayList<GeoObject>();
+	
     public GeoObject(String object_name, String object_type){
         type = object_type;
         name = object_name;
@@ -25,5 +26,9 @@ public class GeoObject {
         return(name);
     }
     
+    public void equality(GeoObject inputObj){
+    	equalities.add(inputObj);
+		equalities.addAll(inputObj.equalities);
+    }    
 }
 
