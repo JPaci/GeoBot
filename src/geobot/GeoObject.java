@@ -28,7 +28,7 @@ public class GeoObject {
     
     public void equality(GeoObject inputObj){
     	equalities.add(inputObj);
-		equalities.addAll(inputObj.equalities);
+	equalities.addAll(inputObj.equalities);
     }    
 }
 
