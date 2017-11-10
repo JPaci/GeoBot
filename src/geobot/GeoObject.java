@@ -12,7 +12,7 @@ package geobot;
 public class GeoObject {
     public String type;
     public String name;
-    ArrayList<GeoObject> equalities = new ArrayList<GeoObject>();
+    HashSet<GeoObject> equalities = new HashSet<GeoObject>();
 	
     public GeoObject(String object_name, String object_type){
         type = object_type;
@@ -31,7 +31,7 @@ public class GeoObject {
 	equalities.addAll(inputObj.equalities);
 	inputObj.equalities.add(this);
 	inputObj.equalities.addAll(equalities);
-	inputObj.equalities.remove(list.size() - 1);
+	inputObj.equalities.remove(inputObj.equalities.size() - 1);
     }    
 }
 
